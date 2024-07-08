@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="branco">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link 
+    rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2? family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfólio</title> 
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="conteudo">
+        <div id="perfil">
+            <img src="./assets/Breno.png" alt="Foto de Breno com camisa social cor de vinho, e ao fundo há um portão e uma escadaria"/>
+            <p>@BrenoKauê</p>
+        </div>
+
+        <div id=botão onclick="mudar()"> <!--o atríbuto "onclick" vai no JavaScript procurar a função que criamos-->
+            <button></button>
+            <span></span>
+        </div>
+
+        <ul>
+            <li> <!-- o hashtag quer dizer que o link não vai para nenhuma página-->
+                <a href="#"> Inscrever-se no NLW </a>
+            </li>
+
+            <li>
+                <a href="#"> Baixar meu e-book </a>
+            </li>
+
+            <li>
+                <a href="https://github.com/brezona?tab=repositories" target="_blank"> Ver meu portfólio </a>
+            </li> <!--target blanck quer dizer que: "o link deve abrir na mesma página/o outro site deve abrir nessa tela"-->
+
+            <li>
+                <a href="#"> Conheça o Explorer </a>
+            </li>
+        </ul>
+        
+        <div id=linkssociais> <!--esses icons(ícones) são pegos do site:ionicons, que foi inserido os icons no script abaixo-->
+            <ion-icon  name = "logo-github" > </ion-icon >
+            <ion-icon  name = "logo-instagram" > </ion-icon >
+            <ion-icon  name = "logo-youtube" > </ion-icon >
+            <ion-icon  name = "logo-linkedin" > </ion-icon >
+        </div>
+        <footer>
+            Feito com ♥ pela <a href=""> Rocketseat </a>
+        </footer>
+    </div>
+
+    <script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+    <script src="./script.js"> </script>
+</body>
+</html>

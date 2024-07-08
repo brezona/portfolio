@@ -1,0 +1,196 @@
+body {
+  /*tira todas as medidas de margem e borda pré-definidas pelo computador*/
+  margin: 0;
+  padding: 0;
+}
+
+/*variáveis*/
+:root {
+  --texto: white;
+  --fundo: url(./assets/bg-mobile.jpg);
+  --bordaLI: rgb(255, 255, 255, 0.5);
+  --fundoLI: rgb(255, 255, 255, 0.1);
+  --funfoLI-hover: rgb(255, 255, 255, 0.05);
+  --linkssociaishouver: rgb(255, 255, 255, 0.2);
+  --botão: url(./assets/lua-estrelas.svg);
+}
+.branco {
+  --texto: black;
+  --fundo: url(./assets/bg-mobile-light.jpg);
+  --bordaLI: rgb(0, 0, 0, 0.5);
+  --fundoLI: rgb(0, 0, 0, 0.05);
+  --funfoLI-hover: rgb(0, 0, 0, 0.02);
+  --linkssociaishouver: rgb(0, 0, 0, 0.1);
+  --botão: url(./assets/sol.svg);
+}
+
+body {
+  /* background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  /*todas as características do fundo; escritas acima; foram abreviadas em uma única linha*/
+  background: var(--fundo) no-repeat top center/cover;
+  /*esse tipo de propriedade é chamada de "atalho" ou "short-hand"*/
+  /* "var" é variável; veja que em :root e em .branco foram criadas variáveis*/
+  
+  height: 100vh;/*100% da viewport height; na viewport(tela) vai cobrir 100% da altura da tela*/
+}
+
+body {
+  font-family: "inter", sans-serif;
+  color: var(--texto);
+}
+
+#conteudo {
+  width: 100%; /*o conteúdo vai cobrir a largura máxima da tela, até o lime máximo abaixo, de 588 pixels*/
+  max-width: 588px;
+  margin: 56px auto; /*coloca 56px de espaçamento no topo*/ /*centraliza o "Conteudo"no centro da tela; "auto"maticamente ele faz um calculo e faz as margens laterais na mesma medida/distancia*/
+  padding: 0 24px; /*do espaço do width, 24 pixels são dos preenchimentos laterais*/
+}
+
+#perfil {
+  padding: 24px;
+}
+
+#perfil img {
+  width: 112px;
+
+  display: block; /*display em inglês é mostrar*/
+  margin: auto;
+  /*faz a img; que é um obj inline(em linha); ser block (quadrado); o display block fará a imagem ser lida como se estivesse num quadrado; e por isso, pode ser centralizado com "auto"*/
+}
+
+#perfil p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+#botão {
+  position: relative; /*esse position relativisa outros position; como o do botton abaixo; assim o "absolute" de position abaixo, só funcionará dentro da área do width de 66px*/
+  width: 66px;
+  margin: 4px auto;
+}
+
+#botão button {
+  height: 32px;
+  width: 32px;
+  background: white var(--botão) no-repeat /*não repita a imagem*/ center /*posicione ela no centro*/;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*position:absolute, sobrepõem o elemento sobre outros*/
+  z-index: 1; /*com z-index, o elemento é colocado na camada 1*/
+  left: 0; /*coloca o button na posição 0 do lado esquerdo; totalmente no canto do lado esquerdo da área do botão que foi estabelecida acima*/
+
+  /*um truque matemático: o botão não está alinhado a barrinha (span), então top: 50%, obriga ele a ficar esse tanto porcento acima da barra, e com "tranform..." o obrigamos a descer essa quantidade, assim alinhando o botton à barrinha*/
+  top: 50%;
+  transform: translateY(-50%);
+
+  animation: deslizamentoVolta 0.4s; /*a animação do keiframe lá em baixo será de 4 seg.*/
+}
+
+.branco #botão button {
+  animation: deslizamento 0.4s forwards; /*a animação do keiframe lá em baixo será de 4 seg*/ /*forwards diz para o css manter as propriedades, assim o botão não fica voltando*/
+}
+
+#botão button:hover { /*hover é a função que o seu conteúdo só funcina quando passa o mouse por cima do elemento*/
+  outline: 8px solid var(--fundoLI); /*uma borda aparecerá em volta do botão*/
+}
+
+#botão span {
+  display: block; /*span é uma tag inline (linha), por isso é tornada em block para aceitar a altura e largura*/
+  height: 24px;
+  width: 64px;
+  border-radius: 9999px;
+
+  background: var(--fundoLI);
+  border: 1px solid var(--bordaLI);
+  backdrop-filter: blur(4px); /*bLur é "embaçar"*/
+  -webkit-backdrop-filter: blur(4px); /*o "-webkit..." serve para ativar/permitir o backdrop-filter em alguns aparelhos*/
+}
+
+ul {
+  list-style: none; /*tira as características da lista, omo pontos e números*/
+  display: flex;
+  flex-direction: column; /*coloca a lista em coluna*/
+  gap: 16px; /*gap é o "espaçamento entre" as listas*/
+
+  padding: 24px 0;
+}
+
+ul li a {
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+
+  background: var(--fundoLI);
+  border: 1px solid var(--bordaLI);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px); /*bLur é "embaçar"*/
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*o "-webkit..." serve para ativar/permitir o backdrop-filter em alguns aparelhos*/
+
+  text-decoration: none; /*os textos tem links que faz uma barrinha em baixo do texto, então o "none" tira a decoração do texto*/
+  font-weight: 500; /*a fonte é 500*/
+}
+
+ul li a:hover {
+  background: var(--funfoLI-hover);
+  border: 1.5px solid var(--texto);
+}
+
+#linkssociais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0px;
+  font-size: 24px;
+}
+
+#linkssociais ion-icon {
+  padding: 16px;
+}
+
+#linkssociais ion-icon:hover {
+  background: var(--linkssociaishouver);
+  border-radius: 50%;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+}
+
+@media (min-width: 700px) { /*quando a largura mínima for de 700px, a variável fundo vai alterar para os novos fundos abaixo*/
+  :root {
+    --fundo: url(./assets/bg-desktop.jpg);
+  }
+  .branco {
+   --fundo: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes deslizamento { /*keiframes colocas animações*/
+  /*abaixo vemos animações para o botão, assim ele poderá deslizar suaviamente de uma ponta a outra*/
+  from {
+    left: 0;   
+  }
+  to {
+    left: 52%;
+  }
+}
+@keyframes deslizamentoVolta {
+ from {
+  left: 52%;
+ } 
+ to {
+  left: 0;
+ }
+}
