@@ -30,7 +30,7 @@ body {
   background-size: cover; */
 
   /*todas as características do fundo; escritas acima; foram abreviadas em uma única linha*/
-  background: var(--fundo) no-repeat top center/cover;
+  background: var(--fundo) no-repeat top center cover;
   /*esse tipo de propriedade é chamada de "atalho" ou "short-hand"*/
   /* "var" é variável; veja que em :root e em .branco foram criadas variáveis*/
   
